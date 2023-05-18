@@ -1,0 +1,25 @@
+ Global: {
+    scene = "Scene";
+}
+
+SceneLibrary: {
+    Scene: "Scene" {
+        objects = "OB_001", "OB_002";
+        horizon = 0.5,0.5,0.5;
+        zenith  = 1.0,1.0,1.0;
+        flags = 4; 
+    }
+}
+
+ShapeLibrary: {
+    Cube: "SH_001" { extent = 1; }
+}
+
+ObjectLibrary: {
+    Object: "OB_001" { data = "CA_001"; location = 0, -5,  0; }
+    Object: "OB_002" { data = "SH_001"; location = 0,  0, 0; scale=1,1,1;}
+}
+
+CameraLibrary: {
+    Camera: "CA_001" { interactive = 1; clip = 0, 1000; }
+}

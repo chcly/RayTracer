@@ -1,6 +1,5 @@
 add_subdirectory(bAscii)
 add_subdirectory(Math)
-#add_subdirectory(Animation)
 add_subdirectory(Utils)
 add_subdirectory(FreeImage)
 add_subdirectory(Image)

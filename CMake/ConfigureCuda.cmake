@@ -17,6 +17,7 @@
 #    misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 # ------------------------------------------------------------------------------
+cmake_policy(SET CMP0074 NEW)
 set(CMAKE_CUDA_RUNTIME_LIBRARY Static)
 find_package(CUDAToolkit)
 

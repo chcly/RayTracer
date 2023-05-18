@@ -1,33 +1,23 @@
-
-
+## Needs CMake v3.15
 macro(set_static_runtime)
     if(MSVC)
-        foreach(flag_var    CMAKE_CXX_FLAGS 
-	                        CMAKE_CXX_FLAGS_DEBUG 
-	                        CMAKE_CXX_FLAGS_RELEASE 
-	                        CMAKE_CXX_FLAGS_MINSIZEREL 
-	                        CMAKE_CXX_FLAGS_RELWITHDEBINFO
-	                        CMAKE_C_FLAGS_DEBUG
-	                        CMAKE_C_FLAGS_RELEASE
-	                        CMAKE_C_FLAGS_MINSIZEREL 
-	                        CMAKE_C_FLAGS_RELWITHDEBINFO
-	                        )
-		    if(${flag_var} MATCHES "/MD")
-			    string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
-		    endif(${flag_var} MATCHES "/MD")
+		set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+		#message(STATUS "CMAKE_MSVC_RUNTIME_LIBRARY=${CMAKE_MSVC_RUNTIME_LIBRARY}")
+    endif()
+endmacro()
 
-            if(${flag_var} MATCHES "/MDd")
-			    string(REGEX REPLACE "/MDd" "/MTd" ${flag_var} "${${flag_var}}")
-		    endif(${flag_var} MATCHES "/MDd")
-        endforeach(flag_var)
-    endif(MSVC)
-endmacro(set_static_runtime)
+macro(set_dynamic_runtime)
+    if(MSVC)
+		set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+		#message(STATUS "CMAKE_MSVC_RUNTIME_LIBRARY=${CMAKE_MSVC_RUNTIME_LIBRARY}")
+    endif()
+endmacro()
 
 macro(set_static_runtime_cuda)
     if(MSVC)
-		set(CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT "MultiThreadedDebug")
-    endif(MSVC)
-endmacro(set_static_runtime_cuda)
+    	set(CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT "MultiThreadedDebug")
+    endif()
+endmacro()
 
 macro(msvc_disable_crt_warnings)
     if(MSVC)

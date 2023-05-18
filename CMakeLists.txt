@@ -18,7 +18,7 @@
 #    misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 # ------------------------------------------------------------------------------
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.23)
 project(RayTracer)
 
 list(APPEND CMAKE_MODULE_PATH  
@@ -49,10 +49,3 @@ else()
 endif()
 
 add_subdirectory(RenderSystem)
-
-
-if (RayTracer_BUILD_TEST)
-
-    add_subdirectory(${GTEST_DIR})
-
-endif()

@@ -24,7 +24,7 @@
 
 #include "Utils/Config/skConfig.h"
 
-#define RayTracer_USING_CUDA 1
+/* #undef RayTracer_USING_CUDA */
 #define RayTracer_OPT_GEN_INTRINSIC 1
 #define RayTracer_EXTRA_DEBUG 1
 /* #undef RayTracer_SLOW_INTERSECTIONS */
