@@ -1,0 +1,32 @@
+name: Build With CMake
+
+on: [push]
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Debug
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v2
+     - name: Git Initialize Submodules
+       run: git submodule init
+
+     - name: Git Clone Submodules
+       run: git submodule update --init --merge
+
+     - name: Create Build Environment
+       run: cmake -E make_directory ${{github.workspace}}/build
+
+     - name: Configure CMake
+       shell: bash
+       working-directory: ${{github.workspace}}/build
+       run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DFileTools_BUILD_TEST=ON -DFileTools_AUTO_RUN_TEST=ON -DFileTools_BUILD_RECOMPILE_TEST=ON -DFileTools_BLEND_FILE=ON -DFileTools_BLEND_TEST=ON
+
+     - name: Build
+       working-directory: ${{github.workspace}}/build
+       shell: bash
+       run: cmake --build . --config $BUILD_TYPE
+

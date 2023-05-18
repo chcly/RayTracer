@@ -1,0 +1,12 @@
+
+SceneLibrary:
+{
+Scene:
+    "T1_scene"
+    {
+        objects = "A";
+        horizon = 1, 2, 3;
+        zenith  = 1, 2, 3;
+        flags   = 1;
+    }
+}

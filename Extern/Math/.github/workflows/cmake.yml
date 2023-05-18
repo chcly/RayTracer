@@ -1,0 +1,22 @@
+name: CMake
+
+on: [push]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Pull Sub Modules
+      run: git submodule update --init
+      
+    - name: Create Build Environment
+      run: cmake .
+
+    - name: Build Project
+      run: make

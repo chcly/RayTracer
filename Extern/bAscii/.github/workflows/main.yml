@@ -1,0 +1,23 @@
+name: Build With CMake
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v2
+
+     - name: Git Initialize Sub-Modules
+       run: git submodule update --init
+
+     - name: Git Clone Sub-Modules
+       run: git submodule update --init --merge
+
+     - name: Configure
+       run: cmake -DbAscii_BUILD_TEST=ON -DbAscii_AUTO_RUN_TEST=ON .
+
+     - name: Build
+       run: make
+       

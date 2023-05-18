@@ -1,0 +1,86 @@
+## Global library
+
+Global    
+creator
+scene
+version
+
+## SceneLibrary
+SceneLibrary
+Scene
+objects
+horizon
+zenith
+
+## ShapeLibrary
+ShapeLibrary
+Cube
+Sphere
+Plane
+Cone
+Cylinder
+center
+extent
+radius
+point
+normal
+
+
+## ObjectLibrary
+
+ObjectLibrary
+Object
+data
+location
+rotation
+scale
+matrix
+parent
+material
+
+
+
+## CameraLibrary
+
+CameraLibrary
+Camera
+clip
+fov
+interactive
+
+
+
+## LightLibrary
+
+LightLibrary
+Light
+color
+power
+elevation
+decay
+type
+mode
+
+
+## MeshLibrary
+
+MeshLibrary
+Mesh
+materials
+
+VertexBuffer
+vertices
+normals
+IndexBuffer
+indices
+flags
+
+
+## MaterialLibrary
+
+MaterialLibrary
+Material
+diffuse
+ambient
+specular
+hardness

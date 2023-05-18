@@ -1,0 +1,145 @@
+#nav-tree .children_ul {
+    margin: 0;
+    padding: 4px;
+}
+
+#nav-tree ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-tree li {
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-tree .plus {
+    margin: 0;
+}
+
+#nav-tree .selected {
+    background-color: #222;
+    color: #66B322;
+}
+
+#nav-tree img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: middle;
+}
+
+#nav-tree a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#nav-tree .label {
+    margin: 0;
+    padding: 0;
+    font: 12px 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+}
+
+#nav-tree .label a {
+    padding: 2px;
+}
+
+#nav-tree .selected a {
+    text-decoration: none;
+    color: #66B322;
+}
+
+#nav-tree .children_ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-tree .item {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-tree {
+    padding: 0 0;
+    background-color: #222;
+    font-size: 14px;
+    overflow: auto;
+}
+
+#doc-content {
+    overflow: auto;
+    display: block;
+    padding: 0;
+    margin: 0;
+    -webkit-overflow-scrolling: touch; /* iOS 5+ */
+}
+
+#side-nav {
+    padding: 0 6px 0 0;
+    margin: 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 250px;
+}
+
+.ui-resizable .ui-resizable-handle {
+    display: block;
+}
+
+.ui-resizable-e {
+    background-color: #222;
+    background-size: 100%;
+    background-attachment: scroll;
+    cursor: ew-resize;
+    height: 100%;
+    right: 1px;
+    top: 0;
+    width: 6px;
+}
+
+.ui-resizable-handle {
+    display: none;
+    font-size: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+#nav-tree-contents {
+    margin: 0;
+}
+
+#nav-tree {
+    background-color: #333;
+    -webkit-overflow-scrolling: touch; /* iOS 5+ */
+}
+
+#nav-sync {
+    position: absolute;
+    top: 5px;
+    right: 24px;
+    z-index: 0;
+}
+
+#nav-sync img {
+    opacity: 0.0;
+}
+
+#nav-sync img:hover {
+    opacity: 0.0;
+}
+
+@media print {
+    #nav-tree {
+        display: none;
+    }
+
+    div.ui-resizable-handle {
+        display: none;
+        position: relative;
+    }
+}

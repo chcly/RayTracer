@@ -1,0 +1,7 @@
+#ifndef _Extras_Files_
+#define _Extras_Files_
+
+#cmakedefine ExtraFileDir "@CMAKE_CURRENT_BINARY_DIR@/"
+#define GetFilePathCString(x) ExtraFileDir x
+
+#endif

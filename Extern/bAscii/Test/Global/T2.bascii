@@ -1,0 +1,5 @@
+Global: {
+    creator = "Some Valid String";
+    scene   = "Active Scene In the scene library";
+    version = 123;
+}
