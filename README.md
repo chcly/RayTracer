@@ -1,28 +1,34 @@
 # RayTracer
 
-Is a small custom ray tracer for educational purposes that runs either on the CPU or GPU. The GPU implementation is written with CUDA. It provides a small code base to work with, and an area to experiment with different ray tracing techniques and optimization tactics. The primary goal is to strike a balance between quality and performance in real-time, as well as to understand the performance limitations of the ray tracing algorithm.
+Is a small custom ray tracer for educational purposes.
 
+It runs either on the CPU or GPU.
 
-## File formats
++ The GPU implementation is written with CUDA.
++ The CPU implementation is threaded using maximum number of CPU cores.
++ Scene information is provided with .bascii files.
++ The [Viewer](https://github.com/chcly/RayTracer/tree/master/Samples/Viewer) in the Samples directory is the main entry point.
++ [Extras/Example.md](Extras/Example.md) provides a usage example.
 
-Scene information is provided with .bascii files. 
+## Testing
 
-The [Viewer](https://github.com/chcly/RayTracer/tree/master/Samples/Viewer) in the Samples directory is the main entry point. It provides the means to load a file, specify a backend, and display a scene. 
-
-## Example
-
-This [link](Extras/Example.md) provides a usage example.
-
+The Test directory is setup to work with [googletest](https://github.com/google/googletest).
 
 ## Building
-This project builds with CMake and It has been tested with CMake's VisualStudio and Unix Makefile generators.   
 
-### Defines 
+Building with CMake and Make.
 
-Optional definitions used in this project.
+```sh
+mkdir build
+cd build
+cmake .. -DRayTracer_BUILD_TEST=ON -DRayTracer_AUTO_RUN_TEST=ON
+make
+```
 
-| Option                  | Description                         | Default |
-|:------------------------|:------------------------------------|:-------:|
-| RayTracer_BUILD_TEST    | Build the unit test program.        |   OFF   |
-| RayTracer_AUTO_RUN_TEST | Automatically run the test program. |   OFF   |
+### Optional defines
 
+| Option                       | Description                                          | Default |
+| :--------------------------- | :--------------------------------------------------- | :-----: |
+| RayTracer_BUILD_TEST         | Build the unit test program.                         |   ON    |
+| RayTracer_AUTO_RUN_TEST      | Automatically run the test program.                  |   OFF   |
+| RayTracer_USE_STATIC_RUNTIME | Build with the MultiThreaded(Debug) runtime library. |   ON    |
